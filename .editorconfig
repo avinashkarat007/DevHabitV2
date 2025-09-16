@@ -1,0 +1,14 @@
+root = true
+
+# All files
+[*]
+indent_style = space
+
+# Xml files
+[*.xml]
+indent_size = 2
+
+
+# Disable just this rule
+[*.cs]
+dotnet_diagnostic.CA1515.severity = none
