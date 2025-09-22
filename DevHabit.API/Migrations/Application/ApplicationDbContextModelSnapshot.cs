@@ -66,9 +66,9 @@ namespace DevHabit.API.Migrations.Application
                         .HasColumnName("updated_at_utc");
 
                     b.HasKey("Id")
-                        .HasName("pk_habit");
+                        .HasName("pk_habits");
 
-                    b.ToTable("habit", "dev_habit");
+                    b.ToTable("habits", "dev_habit");
                 });
 
             modelBuilder.Entity("DevHabit.API.Entities.Habit", b =>
@@ -89,11 +89,11 @@ namespace DevHabit.API.Migrations.Application
 
                             b1.HasKey("HabitId");
 
-                            b1.ToTable("habit", "dev_habit");
+                            b1.ToTable("habits", "dev_habit");
 
                             b1.WithOwner()
                                 .HasForeignKey("HabitId")
-                                .HasConstraintName("fk_habit_habit_id");
+                                .HasConstraintName("fk_habits_habits_id");
                         });
 
                     b.OwnsOne("DevHabit.API.Entities.Milestone", "Milestone", b1 =>
@@ -112,11 +112,11 @@ namespace DevHabit.API.Migrations.Application
 
                             b1.HasKey("HabitId");
 
-                            b1.ToTable("habit", "dev_habit");
+                            b1.ToTable("habits", "dev_habit");
 
                             b1.WithOwner()
                                 .HasForeignKey("HabitId")
-                                .HasConstraintName("fk_habit_habit_id");
+                                .HasConstraintName("fk_habits_habits_id");
                         });
 
                     b.OwnsOne("DevHabit.API.Entities.Target", "Target", b1 =>
@@ -137,11 +137,11 @@ namespace DevHabit.API.Migrations.Application
 
                             b1.HasKey("HabitId");
 
-                            b1.ToTable("habit", "dev_habit");
+                            b1.ToTable("habits", "dev_habit");
 
                             b1.WithOwner()
                                 .HasForeignKey("HabitId")
-                                .HasConstraintName("fk_habit_habit_id");
+                                .HasConstraintName("fk_habits_habits_id");
                         });
 
                     b.Navigation("Frequency")

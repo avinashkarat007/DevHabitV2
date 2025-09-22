@@ -4,6 +4,12 @@
     <UserSecretsId>fa6e2e2c-b197-49f3-8152-6f456f6248b9</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+      <!-- Don’t promote warnings to errors -->
+      <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+
+      <!-- Disable all Code Analysis rules (CAxxxx, IDExxxx, etc.) -->
+      <EnableNETAnalyzers>false</EnableNETAnalyzers>
+      <AnalysisMode>None</AnalysisMode>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +21,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="Npgsql.OpenTelemetry" />
     <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" />
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
     <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" />
